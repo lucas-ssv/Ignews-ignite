@@ -27,10 +27,7 @@ export default function Posts({ posts }: PostsProps) {
       <main className={styles.container}>
         <div className={styles.posts}>
           {posts.map((post) => (
-            <Link
-              key={post.slug}
-              href={`${process.env.NEXT_PUBLIC_APP_URL}/posts/${post.slug}`}
-            >
+            <Link key={post.slug} href={`/posts/${post.slug}`}>
               <a>
                 <time>{post.updatedAt}</time>
                 <strong>{post.title}</strong>
@@ -55,7 +52,7 @@ export const getStaticProps: GetStaticProps = async () => {
     }
   );
 
-  const posts = response?.results.map((post) => {
+  const posts = response.results.map((post) => {
     return {
       slug: post.uid,
       title: RichText.asText(post.data.title),

@@ -8,16 +8,10 @@ export function Header() {
       <div className={styles.headerContent}>
         <img src="/images/logo.svg" alt="ig.news" />
         <nav>
-          <ActiveLink
-            activeClassName={styles.active}
-            href={`${process.env.NEXT_PUBLIC_APP_URL}/`}
-          >
+          <ActiveLink activeClassName={styles.active} href="/">
             <a>Home</a>
           </ActiveLink>
-          <ActiveLink
-            activeClassName={styles.active}
-            href={`${process.env.NEXT_PUBLIC_APP_URL}/posts`}
-          >
+          <ActiveLink activeClassName={styles.active} href="/posts">
             <a>Posts</a>
           </ActiveLink>
         </nav>
